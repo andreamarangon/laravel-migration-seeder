@@ -17,9 +17,10 @@ class TravelsTableSeeder extends Seeder
     {
         for ($i = 0; $i < 10; $i++) {
             $newTravel = new Travel();
+            $newTravel->departure = $faker->dateTime();
+            $newTravel->return = $faker->dateTime();
             $newTravel->reference = $faker->bothify('??-########');
             $newTravel->address = $faker->streetAddress();
-            $newTravel->postal_code = $faker->postcode();
             $newTravel->city = $faker->city();
             $newTravel->state = $faker->state();
             $newTravel->square_meters = $faker->numberBetween(30,100);
